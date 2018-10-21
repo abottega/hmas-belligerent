@@ -1,0 +1,24 @@
+{
+  "name": "gifttribe-website",
+  "version": "1.0.0",
+  "description": "Marketing website for gift tribe",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abottega/gifttribe-website.git"
+  },
+  "author": "Adam Bottega",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-htmlclean": "^2.7.22",
+    "gulp-inject": "^4.3.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.1",
+    "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {}
+}

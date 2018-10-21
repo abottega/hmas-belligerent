@@ -1,0 +1,41 @@
+.crew {
+    
+    &__bios {
+
+    }
+
+    &__member {
+        display: flex;
+        width: 100%;
+        border: solid 1px $darkerGreen;
+        padding: $defaultSpacingHalf;
+        margin-bottom: $defaultSpacingHalf;
+        transition: $defaultTransition;
+        &--link {
+            &:hover {
+                background: $darkerGreen;
+                color: $codeGreen;
+            }
+        }
+    }
+
+    &__memberPicture {
+        flex: 0 0 auto;
+        display: block;
+        border: solid 1px $borderGreen;
+        width: 150px;
+        height: 200px;
+        margin-right: $defaultSpacing;
+        &--small {
+            width: 75px;
+            height: 100px;
+        }
+    }
+
+    &__memberDetails {
+        flex: 1 1 auto;
+        h3 {
+            font-weight: bold;
+        }
+    }
+}

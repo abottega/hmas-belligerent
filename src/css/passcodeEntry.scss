@@ -1,0 +1,53 @@
+.passcodeEntry {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding-top: $defaultSpacingDouble;
+
+    input[type="text"] {
+        border: solid 1px $darkerGreen;
+        font-size: 3rem;
+        background: transparent;
+        color: $codeGreen;
+        padding: $defaultSpacing;
+        transition: $defaultTransition;
+        &:focus {
+            border-color: $codeGreen;
+            outline: 0;
+        }
+    }
+
+    input[type="submit"] {
+        border: solid 1px $darkerGreen;
+        font-size: 3rem;
+        cursor: pointer;
+        margin-left: $defaultSpacingHalf;
+        font-weight: bold;
+        background: $darkerGreen;
+        color: $codeGreen;
+        padding: $defaultSpacing;
+        transition: $defaultTransition;
+        &:hover {
+            background: darken($darkerGreen, 5%);
+        }
+    }
+}
+
+.flexspan {
+    flex: 1 1 100%;
+}
+
+.invalidEntry {
+    text-transform: uppercase;
+    display: none;
+    text-align: center;
+    color: $error;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.missionControl {
+    display: none;
+}
