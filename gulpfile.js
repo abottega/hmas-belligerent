@@ -24,6 +24,8 @@ var paths = {
   tmpJS: 'tmp/js/',
   tmpIMG: 'tmp/img/',
 
+  docs: 'docs', /* for github pages */
+
   dist: 'dist',
   distIndex: 'dist/',
   distCSS: 'dist/css/',
@@ -55,17 +57,17 @@ gulp.task('inject', ['copy'], function () {
   var css = gulp.src(paths.tmpCSS + "styles.css");
   var js = gulp.src(paths.tmpJS + "scripts.js");
   return gulp.src(paths.tmpIndex)
-    .pipe(inject( css, { relative:true } ))
-    .pipe(inject( js, { relative:true } ))
-    .pipe(gulp.dest(paths.tmp));
+  .pipe(inject( css, { relative:true } ))
+  .pipe(inject( js, { relative:true } ))
+  .pipe(gulp.dest(paths.tmp));
 });
 
 gulp.task('serve', ['inject'], function () {
   return gulp.src(paths.tmp)
-    .pipe(webserver({
-      port: 3030,
-      livereload: true
-    }));
+  .pipe(webserver({
+    port: 3030,
+    livereload: true
+  }));
 });
 
 gulp.task('watch', ['serve'], function () {
@@ -76,29 +78,29 @@ gulp.task('default', ['watch']);
 
 //Clean tmp and dist folders
 gulp.task('clean', function () {
-  del([paths.tmp, paths.dist]);
+  del([paths.tmp, paths.docs, paths.dist]);
 });
 
 // Build dist tasks
 gulp.task('html:dist', function () {
   return gulp.src(paths.srcHTML)
-    .pipe(htmlclean())
-    .pipe(gulp.dest(paths.dist));
+  .pipe(htmlclean())
+  .pipe(gulp.dest(paths.dist));
 });
 gulp.task('css:dist', function () {
   return gulp.src(paths.srcCSS)
-    .pipe(sass().on('error', sass.logError))
-    .pipe(cleanCSS())
-    .pipe(gulp.dest(paths.distCSS));
+  .pipe(sass().on('error', sass.logError))
+  .pipe(cleanCSS())
+  .pipe(gulp.dest(paths.distCSS));
 });
 gulp.task('js:dist', function () {
   return gulp.src(paths.srcJS)
-    .pipe(uglify())
-    .pipe(gulp.dest(paths.distJS));
+  .pipe(uglify())
+  .pipe(gulp.dest(paths.distJS));
 });
 gulp.task('img:dist', function () {
   return gulp.src(paths.srcIMG)
-    .pipe(gulp.dest(paths.distIMG));
+  .pipe(gulp.dest(paths.distIMG));
 });
 
 gulp.task('copy:dist', ['html:dist', 'css:dist', 'js:dist', 'img:dist']);
@@ -107,8 +109,12 @@ gulp.task('inject:dist', ['copy:dist'], function () {
   var css = gulp.src(paths.distCSS);
   var js = gulp.src(paths.distJS);
   return gulp.src(paths.distIndex)
-    .pipe(inject( css, { relative:true } ))
-    .pipe(inject( js, { relative:true } ))
-    .pipe(gulp.dest(paths.dist));
+  .pipe(inject( css, { relative:true } ))
+  .pipe(inject( js, { relative:true } ))
+  .pipe(gulp.dest(paths.dist));
 });
 gulp.task('build', ['inject:dist']);
+
+gulp.task('docs', function () {
+  return gulp.src(paths.tmp + "/**/*").pipe(gulp.dest(paths.docs));
+});
