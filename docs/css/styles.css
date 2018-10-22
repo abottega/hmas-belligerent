@@ -609,33 +609,6 @@ template {
 .missionControl {
   display: none; }
 
-.crew__member {
-  display: flex;
-  width: 100%;
-  border: solid 1px #28312c;
-  padding: 10px;
-  margin-bottom: 10px;
-  transition: all 200ms ease-in-out; }
-  .crew__member--link:hover {
-    background: #28312c;
-    color: #87978C; }
-
-.crew__memberPicture {
-  flex: 0 0 auto;
-  display: block;
-  border: solid 1px #909a92;
-  width: 150px;
-  height: 200px;
-  margin-right: 20px; }
-  .crew__memberPicture--small {
-    width: 75px;
-    height: 100px; }
-
-.crew__memberDetails {
-  flex: 1 1 auto; }
-  .crew__memberDetails h3 {
-    font-weight: bold; }
-
 .textInput {
   border: solid 1px #28312c;
   font-size: 3rem;
@@ -681,3 +654,40 @@ template {
       background: #292016; }
     .labTerminal .button:focus {
       box-shadow: 0px 0px 0px 3px rgba(58, 45, 31, 0.5); }
+
+.listing__item {
+  display: flex;
+  width: 100%;
+  border: solid 1px #28312c;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: all 200ms ease-in-out; }
+  .listing__item--link:hover {
+    background: #28312c;
+    color: #87978C; }
+
+.listing__picture {
+  flex: 0 0 auto;
+  display: block;
+  border: solid 1px #909a92;
+  width: 150px;
+  height: 200px;
+  margin-right: 20px; }
+  .listing__picture--small {
+    width: 75px;
+    height: 100px; }
+
+.listing__details {
+  flex: 1 1 auto; }
+  .listing__details h3 {
+    font-weight: bold; }
+  .listing__details--flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+
+.listing__small {
+  display: block; }
+
+.listing__paragraph {
+  font-size: 1.6rem; }
