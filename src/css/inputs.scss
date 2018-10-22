@@ -1,0 +1,12 @@
+.textInput {
+    border: solid 1px $darkerGreen;
+    font-size: 3rem;
+    background: transparent;
+    color: $codeGreen;
+    padding: $defaultSpacing;
+    transition: $defaultTransition;
+    &:focus {
+        border-color: $codeGreen;
+        outline: 0;
+    }
+}

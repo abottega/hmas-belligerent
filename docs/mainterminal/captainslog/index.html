@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-
-<html lang="en-gb">
+<html>
 
 	<head>
-		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
@@ -16,19 +14,44 @@
 		<meta name="theme-color" content="#ffffff">
 		<!--[htmlclean-protect]-->
 		<!-- inject:css -->
-		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="../../css/styles.css">
 		<!-- endinject -->
 		<!--[/htmlclean-protect]-->
 		<!-- CSS -->
 	</head>
 
-	<body>
+	<body class="mainTerminal">
 
-		<div class="splashScreen"></div>
+		<div class="container">
+			<div class="background">
+				<div class="background__contentBox">
 
+					<header class="header">
+						<a href="../menu/">< Back</a>
+							<h1 class="lockedHeading">Captains Log</h1>
+					</header>
+
+					<form id="captainsLogPasscode" class="passcodeEntry">
+						<input type="password" name="passcode" class="textInput passcode" autocomplete="off" placeholder="Enter passcode">
+						<input type="submit" class="button" value="UNLOCK">
+						<div class="invalidEntry flexspan">
+							Invalid entry. Try again.
+						</div>
+						<div class="softkeys softkeys--sm flexspan" data-target="input[name='passcode']"></div>
+					</form>
+
+					<div class="captainsLog">
+						Captains log content
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<script src="../../js/jquery.min.js"></script>
 		<!--[htmlclean-protect]-->
 		<!-- inject:js -->
-		<script src="js/scripts.js"></script>
+		<script src="../../js/scripts.js"></script>
 		<!-- endinject -->
 		<!--[/htmlclean-protect]-->
 		<!-- JavaScript -->

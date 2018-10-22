@@ -27,6 +27,14 @@ body {
   background: #0A0D0B;
   color: #87978C;
   height: 100%; }
+  html.medicalTerminal,
+  body.medicalTerminal {
+    background: #080a0f;
+    color: #6783b7; }
+  html.labTerminal,
+  body.labTerminal {
+    background: #0e0b08;
+    color: #b2916d; }
 
 h1 {
   font-size: 2.8rem;
@@ -62,16 +70,31 @@ a {
   font-weight: bold;
   text-decoration: none;
   transition: all 200ms ease-in-out; }
+  .medicalTerminal a {
+    color: #6783b7; }
+  .labTerminal a {
+    color: #b2916d; }
   a:hover, a:focus {
     outline: 0;
     color: #617066; }
+    .medicalTerminal a:hover, .medicalTerminal a:focus {
+      color: #435e8e; }
+    .labTerminal a:hover, .labTerminal a:focus {
+      color: #8a6b49; }
 
-.flexCenter {
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   width: 100vw; }
+  .container--start {
+    display: none; }
+
+.contentRequired {
+  color: #b40000;
+  font-weight: bold;
+  font-style: italic; }
 
 /* Apply normalize css reset */
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -365,6 +388,18 @@ template {
 [hidden] {
   display: none; }
 
+.splashScreen {
+  width: 100vw;
+  height: 100vh;
+  background: black url("../img/HMASbelligerent.png") center center no-repeat;
+  background-size: 236px 236px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; }
+  .splashScreen .button {
+    margin-bottom: 80px; }
+
 .background {
   position: relative;
   display: flex;
@@ -375,10 +410,14 @@ template {
     padding: 20px;
     flex: 1 1 auto;
     border: solid 1px #909a92; }
+    .medicalTerminal .background__contentBox {
+      border: solid 1px #1d283c; }
+    .labTerminal .background__contentBox {
+      border: solid 1px #3a2d1f; }
     .background__contentBox:before {
       content: "Main Terminal";
       display: block;
-      color: #28312c;
+      color: #87978C;
       text-transform: uppercase;
       font-size: 1.4rem;
       width: 100%;
@@ -386,6 +425,14 @@ template {
       position: absolute;
       top: -20px;
       left: 0; }
+      .medicalTerminal .background__contentBox:before {
+        content: "Medical Terminal";
+        color: #6783b7;
+        border-bottom: solid 1px #1d283c; }
+      .labTerminal .background__contentBox:before {
+        content: "Lab Terminal";
+        color: #b2916d;
+        border-bottom: solid 1px #3a2d1f; }
     .background__contentBox:after {
       content: "";
       display: block;
@@ -395,18 +442,30 @@ template {
       position: absolute;
       bottom: -5px;
       left: 0; }
+      .medicalTerminal .background__contentBox:after {
+        border-bottom: solid 1px #1d283c; }
+      .labTerminal .background__contentBox:after {
+        border-bottom: solid 1px #3a2d1f; }
   .background:before {
     content: "";
     flex: 0 0 auto;
     width: 221px;
     height: 583px;
     background: #0A0D0B url("../img/background__left.jpg") top center no-repeat; }
+    .medicalTerminal .background:before {
+      background: #080a0f url("../img/background__left--blue.jpg") top center no-repeat; }
+    .labTerminal .background:before {
+      background: #0e0b08 url("../img/background__left--orange.jpg") top center no-repeat; }
   .background:after {
     content: "";
     flex: 0 0 auto;
     width: 221px;
     height: 583px;
     background: #0A0D0B url("../img/background__right.jpg") top center no-repeat; }
+    .medicalTerminal .background:after {
+      background: #080a0f url("../img/background__right--blue.jpg") top center no-repeat; }
+    .labTerminal .background:after {
+      background: #0e0b08 url("../img/background__right--orange.jpg") top center no-repeat; }
 
 .header {
   display: flex;
@@ -533,28 +592,8 @@ template {
   justify-content: center;
   height: 100%;
   padding-top: 40px; }
-  .passcodeEntry input[type="text"] {
-    border: solid 1px #28312c;
-    font-size: 3rem;
-    background: transparent;
-    color: #87978C;
-    padding: 20px;
-    transition: all 200ms ease-in-out; }
-    .passcodeEntry input[type="text"]:focus {
-      border-color: #87978C;
-      outline: 0; }
-  .passcodeEntry input[type="submit"] {
-    border: solid 1px #28312c;
-    font-size: 3rem;
-    cursor: pointer;
-    margin-left: 10px;
-    font-weight: bold;
-    background: #28312c;
-    color: #87978C;
-    padding: 20px;
-    transition: all 200ms ease-in-out; }
-    .passcodeEntry input[type="submit"]:hover {
-      background: #1d231f; }
+  .passcodeEntry .button {
+    margin-left: 10px; }
 
 .flexspan {
   flex: 1 1 100%; }
@@ -596,3 +635,49 @@ template {
   flex: 1 1 auto; }
   .crew__memberDetails h3 {
     font-weight: bold; }
+
+.textInput {
+  border: solid 1px #28312c;
+  font-size: 3rem;
+  background: transparent;
+  color: #87978C;
+  padding: 20px;
+  transition: all 200ms ease-in-out; }
+  .textInput:focus {
+    border-color: #87978C;
+    outline: 0; }
+
+.button {
+  border: solid 1px #28312c;
+  font-size: 3rem;
+  appearance: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #28312c;
+  color: #87978C;
+  padding: 20px;
+  transition: all 200ms ease-in-out; }
+  .button--small {
+    font-size: 2rem;
+    padding: 10px 20px; }
+  .button:hover {
+    background: #1d231f; }
+  .button:focus {
+    outline: 0;
+    box-shadow: 0px 0px 0px 3px rgba(40, 49, 44, 0.5); }
+  .medicalTerminal .button {
+    border: solid 1px #1d283c;
+    background: #1d283c;
+    color: #6783b7; }
+    .medicalTerminal .button:hover {
+      background: #151d2b; }
+    .medicalTerminal .button:focus {
+      box-shadow: 0px 0px 0px 3px rgba(29, 40, 60, 0.5); }
+  .labTerminal .button {
+    border: solid 1px #3a2d1f;
+    background: #3a2d1f;
+    color: #b2916d; }
+    .labTerminal .button:hover {
+      background: #292016; }
+    .labTerminal .button:focus {
+      box-shadow: 0px 0px 0px 3px rgba(58, 45, 31, 0.5); }

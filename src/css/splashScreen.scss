@@ -1,0 +1,14 @@
+.splashScreen {
+    width: 100vw;
+    height: 100vh;
+    background: $black url("../img/HMASbelligerent.png") center center no-repeat;
+    background-size: 236px 236px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    .button {
+        margin-bottom: $defaultSpacingDouble*2;
+    }
+}

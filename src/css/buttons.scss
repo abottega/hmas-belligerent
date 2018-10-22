@@ -1,0 +1,44 @@
+.button {
+    border: solid 1px $darkerGreen;
+    font-size: 3rem;
+    appearance: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: $darkerGreen;
+    color: $codeGreen;
+    padding: $defaultSpacing;
+    transition: $defaultTransition;
+    &--small {
+        font-size: 2rem;
+        padding: $defaultSpacingHalf $defaultSpacing;
+    }
+    &:hover {
+        background: darken($darkerGreen, 5%);
+    }
+    &:focus {
+        outline: 0;
+        box-shadow: 0px 0px 0px 3px rgba($darkerGreen, 0.5);
+    }
+    .medicalTerminal & {
+        border: solid 1px $darkerBlue;
+        background: $darkerBlue;
+        color: $codeBlue;
+        &:hover {
+            background: darken($darkerBlue, 5%);
+        }
+        &:focus {
+            box-shadow: 0px 0px 0px 3px rgba($darkerBlue, 0.5);
+        }
+    }
+    .labTerminal & {
+        border: solid 1px $darkerOrange;
+        background: $darkerOrange;
+        color: $codeOrange;
+        &:hover {
+            background: darken($darkerOrange, 5%);
+        }
+        &:focus {
+            box-shadow: 0px 0px 0px 3px rgba($darkerOrange, 0.5);
+        }
+    }
+}

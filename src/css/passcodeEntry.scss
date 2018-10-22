@@ -6,32 +6,8 @@
     height: 100%;
     padding-top: $defaultSpacingDouble;
 
-    input[type="text"] {
-        border: solid 1px $darkerGreen;
-        font-size: 3rem;
-        background: transparent;
-        color: $codeGreen;
-        padding: $defaultSpacing;
-        transition: $defaultTransition;
-        &:focus {
-            border-color: $codeGreen;
-            outline: 0;
-        }
-    }
-
-    input[type="submit"] {
-        border: solid 1px $darkerGreen;
-        font-size: 3rem;
-        cursor: pointer;
+    .button {
         margin-left: $defaultSpacingHalf;
-        font-weight: bold;
-        background: $darkerGreen;
-        color: $codeGreen;
-        padding: $defaultSpacing;
-        transition: $defaultTransition;
-        &:hover {
-            background: darken($darkerGreen, 5%);
-        }
     }
 }
 

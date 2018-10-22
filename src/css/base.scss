@@ -26,9 +26,17 @@ html,
 body {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
   font-weight: normal;
-  background: $background;
+  background: $backgroundGreen;
   color: $codeGreen;
   height: 100%;
+  &.medicalTerminal {
+    background: $backgroundBlue;
+    color: $codeBlue;
+  }
+  &.labTerminal {
+    background: $backgroundOrange;
+    color: $codeOrange;
+  }
 }
 
 h1 {
@@ -69,20 +77,41 @@ a {
 	color: $codeGreen;
 	font-weight: bold;
 	text-decoration: none;
-	transition: $defaultTransition;
+  transition: $defaultTransition;
+  .medicalTerminal & {
+    color: $codeBlue;
+  }
+  .labTerminal & {
+    color: $codeOrange;
+  }
 	&:hover,
 	&:focus {
 		outline: 0;
-		color: darken($codeGreen, 15%);
+    color: darken($codeGreen, 15%);
+    .medicalTerminal & {
+      color: darken($codeBlue, 15%);
+    }
+    .labTerminal & {
+      color: darken($codeOrange, 15%);
+    }
 	}
 }
 
-.flexCenter {
+.container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
-	width: 100vw;
+  width: 100vw;
+  &--start {
+    display: none;
+  }
+}
+
+.contentRequired {
+  color: $error;
+  font-weight: bold;
+  font-style: italic;
 }
 
 /* Apply normalize css reset */
