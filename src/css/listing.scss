@@ -47,4 +47,17 @@
     &__paragraph {
         font-size: 1.6rem;
     }
+
+    &__status {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $healthy;
+        &--malfunction {
+            color: $error;
+        }
+        &--override {
+            color: $warning;
+        }
+    }
+
 }

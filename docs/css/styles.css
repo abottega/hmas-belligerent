@@ -691,3 +691,12 @@ template {
 
 .listing__paragraph {
   font-size: 1.6rem; }
+
+.listing__status {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #89cf2d; }
+  .listing__status--malfunction {
+    color: #b40000; }
+  .listing__status--override {
+    color: #e2b900; }
