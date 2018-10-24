@@ -700,3 +700,10 @@ template {
     color: #b40000; }
   .listing__status--override {
     color: #e2b900; }
+
+.starmap {
+  display: block;
+  border: solid 1px #909a92;
+  margin-top: 10px;
+  width: 100%;
+  height: 100%; }
