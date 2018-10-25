@@ -399,6 +399,13 @@ template {
   justify-content: flex-end; }
   .splashScreen .button {
     margin-bottom: 80px; }
+  .splashScreen--flexHorizontal {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 80px; }
+    .splashScreen--flexHorizontal .button {
+      margin: 10px; }
 
 .background {
   position: relative;
@@ -520,6 +527,12 @@ template {
   background-color: #28312c;
   border-color: #28312c;
   color: #fff; }
+  .medicalTerminal .softkeys__btn:hover, .medicalTerminal .softkeys__btn:focus {
+    background-color: #1d283c;
+    border-color: #1d283c; }
+  .labTerminal .softkeys__btn:hover, .labTerminal .softkeys__btn:focus {
+    background-color: #3a2d1f;
+    border-color: #3a2d1f; }
 
 .softkeys__btn span {
   display: none; }
@@ -562,6 +575,12 @@ template {
   background-color: #28312c;
   border-color: #28312c;
   color: #fff; }
+  .medicalTerminal .softkeys--caps .softkeys__btn[data-type=capslock] {
+    background-color: #1d283c;
+    border-color: #1d283c; }
+  .labTerminal .softkeys--caps .softkeys__btn[data-type=capslock] {
+    background-color: #3a2d1f;
+    border-color: #3a2d1f; }
 
 .softkeys--caps .softkeys__btn[data-type=letter] {
   text-transform: uppercase; }
@@ -571,6 +590,12 @@ template {
   background-color: #28312c;
   border-color: #28312c;
   color: #fff; }
+  .medicalTerminal .softkeys--alt .softkeys__btn[data-type=shift] {
+    background-color: #1d283c;
+    border-color: #1d283c; }
+  .labTerminal .softkeys--alt .softkeys__btn[data-type=shift] {
+    background-color: #3a2d1f;
+    border-color: #3a2d1f; }
 
 .softkeys--alt .softkeys__btn[data-type=symbol] span {
   display: none; }
@@ -584,6 +609,8 @@ template {
     font-size: 2.2rem;
     display: block;
     padding: 10px 0; }
+  .navigation--medical, .navigation--lab {
+    display: none; }
 
 .passcodeEntry {
   display: flex;
@@ -619,6 +646,16 @@ template {
   .textInput:focus {
     border-color: #87978C;
     outline: 0; }
+  .medicalTerminal .textInput {
+    border: solid 1px #1d283c;
+    color: #6783b7; }
+    .medicalTerminal .textInput:focus {
+      border-color: #6783b7; }
+  .labTerminal .textInput {
+    border: solid 1px #3a2d1f;
+    color: #b2916d; }
+    .labTerminal .textInput:focus {
+      border-color: #b2916d; }
 
 .button {
   border: solid 1px #28312c;
@@ -665,6 +702,16 @@ template {
   .listing__item--link:hover {
     background: #28312c;
     color: #87978C; }
+  .medicalTerminal .listing__item {
+    border: solid 1px #1d283c; }
+    .medicalTerminal .listing__item--link:hover {
+      background: #1d283c;
+      color: #6783b7; }
+  .labTerminal .listing__item {
+    border: solid 1px #3a2d1f; }
+    .labTerminal .listing__item--link:hover {
+      background: #3a2d1f;
+      color: #b2916d; }
 
 .listing__picture {
   flex: 0 0 auto;
