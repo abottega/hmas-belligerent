@@ -209,4 +209,26 @@ jQuery(document).ready(function($) {
     }
   });
 
+  $("#medicalNavPasscode").submit(function(e) {
+    e.preventDefault();
+    if ($(".passcode").val() == "drugs") {
+      $(this).hide();
+      $(".navigation--medical").show();
+    } else if ($(".passcode").val() != "drugs") {
+      $(".passcode").val("");
+      $(".invalidEntry").show();
+    }
+  });
+  
+  $("#labNavPasscode").submit(function(e) {
+    e.preventDefault();
+    if ($(".passcode").val() == "goat") {
+      $(this).hide();
+      $(".navigation--lab").show();
+    } else if ($(".passcode").val() != "goat") {
+      $(".passcode").val("");
+      $(".invalidEntry").show();
+    }
+  });
+
 });

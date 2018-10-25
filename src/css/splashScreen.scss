@@ -11,4 +11,14 @@
     .button {
         margin-bottom: $defaultSpacingDouble*2;
     }
+
+    &--flexHorizontal {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: $defaultSpacingDouble*2;
+        .button {
+            margin: $defaultSpacingHalf;
+        }
+    }
 }

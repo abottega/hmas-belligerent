@@ -26,15 +26,26 @@
 		<div class="container">
 			<div class="background">
 				<div class="background__contentBox">
-					<div class="navigation">
+
+					<form id="medicalNavPasscode" class="passcodeEntry">
+						<input type="password" name="passcode" class="textInput passcode" autocomplete="off" placeholder="Enter passcode">
+						<input type="submit" class="button" value="UNLOCK">
+						<div class="invalidEntry flexspan">
+							Invalid entry. Try again.
+						</div>
+						<div class="softkeys softkeys--sm flexspan" data-target="input[name='passcode']"></div>
+					</form>
+
+					<div class="navigation navigation--medical">
 						<a href="../messages/">> MESSAGES</a>
-						<a href="../medicallogs/">> MEDICAL LOGS</a>
+						<a href="../patientlogs/">> PATIENT LOGS</a>
 					</div>
+
 				</div>
 			</div>
 		</div>
 
-		<script src="../js/jquery.min.js"></script>
+		<script src="../../js/jquery.min.js"></script>
 		<!--[htmlclean-protect]-->
 		<!-- inject:js -->
 		<!-- endinject -->

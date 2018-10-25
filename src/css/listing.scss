@@ -13,6 +13,24 @@
                 color: $codeGreen;
             }
         }
+        .medicalTerminal & {
+            border: solid 1px $darkerBlue;
+            &--link {
+                &:hover {
+                    background: $darkerBlue;
+                    color: $codeBlue;
+                }
+            }
+        }
+        .labTerminal & {
+            border: solid 1px $darkerOrange;
+            &--link {
+                &:hover {
+                    background: $darkerOrange;
+                    color: $codeOrange;
+                }
+            }
+        }
     }
 
     &__picture {

@@ -5,4 +5,8 @@
         display: block;
         padding: $defaultSpacingHalf 0;
     }
+    &--medical,
+    &--lab {
+        display: none;
+    }
 }

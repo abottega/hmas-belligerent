@@ -21,31 +21,34 @@
 		<!-- CSS -->
 	</head>
 
-	<body class="labTerminal">
+	<body class="medicalTerminal">
 
 		<div class="container">
 			<div class="background">
 				<div class="background__contentBox">
-
-					<form id="labNavPasscode" class="passcodeEntry">
-						<input type="password" name="passcode" class="textInput passcode" autocomplete="off" placeholder="Enter passcode">
-						<input type="submit" class="button" value="UNLOCK">
-						<div class="invalidEntry flexspan">
-							Invalid entry. Try again.
+					<div class="crew">
+						<header class="header">
+							<a href="../patientlogs/">< Back to patient logs</a>
+						</header>
+						<div class="listing">
+							<div class="listing__item">
+								<div class="listing__details">
+									<h4>Lenaina Huksley</h4>
+									<small class="listing__small">297 days ago</small>
+									<p class="listing__paragraph">
+										I've run some tests. Conclusive evidence that Lenaina is infected with the parasite.
+									</p>
+									<p class="listing__paragraph">
+										My opinion is that this parasite is a real threat to the ship now that it has infected a crew member. Need to find out if it has spread already.
+									</p>
+								</div>
+							</div>
 						</div>
-						<div class="softkeys softkeys--sm flexspan" data-target="input[name='passcode']"></div>
-					</form>
-
-					<div class="navigation navigation--lab">
-						<a href="../messages/">> MESSAGES</a>
-						<a href="../testresults/">> TEST RESULTS</a>
-						<a href="../labreports/">> LAB REPORTS</a>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<script src="../../js/jquery.min.js"></script>
 		<!--[htmlclean-protect]-->
 		<!-- inject:js -->
 		<!-- endinject -->

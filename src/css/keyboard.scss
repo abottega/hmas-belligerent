@@ -48,6 +48,14 @@
             background-color: $darkerGreen;
             border-color: $darkerGreen;
             color: #fff;
+            .medicalTerminal & {
+                background-color: $darkerBlue;
+                border-color: $darkerBlue;
+            }
+            .labTerminal & {
+                background-color: $darkerOrange;
+                border-color: $darkerOrange;
+            }
         }
 
         .softkeys__btn span {
@@ -102,6 +110,14 @@
         background-color: $darkerGreen;
         border-color: $darkerGreen;
         color: #fff;
+        .medicalTerminal & {
+            background-color: $darkerBlue;
+            border-color: $darkerBlue;
+        }
+        .labTerminal & {
+            background-color: $darkerOrange;
+            border-color: $darkerOrange;
+        }
     }
 
     .softkeys--caps .softkeys__btn[data-type=letter] {
@@ -114,6 +130,14 @@
         background-color: $darkerGreen;
         border-color: $darkerGreen;
         color: #fff;
+        .medicalTerminal & {
+            background-color: $darkerBlue;
+            border-color: $darkerBlue;
+        }
+        .labTerminal & {
+            background-color: $darkerOrange;
+            border-color: $darkerOrange;
+        }
     }
 
     .softkeys--alt .softkeys__btn[data-type=symbol] span {

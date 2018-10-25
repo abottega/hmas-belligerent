@@ -9,4 +9,18 @@
         border-color: $codeGreen;
         outline: 0;
     }
+    .medicalTerminal & {
+        border: solid 1px $darkerBlue;
+        color: $codeBlue;
+        &:focus {
+            border-color: $codeBlue;
+        }
+    }
+    .labTerminal & {
+        border: solid 1px $darkerOrange;
+        color: $codeOrange;
+        &:focus {
+            border-color: $codeOrange;
+        }
+    }
 }
