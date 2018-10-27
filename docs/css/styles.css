@@ -754,3 +754,28 @@ template {
   margin-top: 10px;
   width: 100%;
   height: 100%; }
+
+.submitReport {
+  font-size: 2.2rem; }
+  .submitReport > * + * {
+    margin-top: 10px; }
+  .submitReport .textInput {
+    font-size: 2.2rem;
+    display: block;
+    width: 100%; }
+  .submitReport .textArea {
+    display: block;
+    width: 100%;
+    border: solid 1px #28312c;
+    font-size: 2.2rem;
+    background: transparent;
+    color: #87978C;
+    padding: 20px;
+    transition: all 200ms ease-in-out; }
+    .submitReport .textArea:focus {
+      border-color: #87978C;
+      outline: 0; }
+  .submitReport .button {
+    font-size: 2.2rem; }
+  .submitReport .reportSubmitted {
+    display: none; }

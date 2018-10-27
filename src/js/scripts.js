@@ -231,4 +231,28 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // Post form to slack channel
+	const getForm = selector =>
+  $(selector).serializeArray().reduce( (accum, entry) => {accum[entry.name] = entry.value; return accum}, {});
+
+  const postMessage = (formSelector, text, url) => {
+  $.ajax({
+    type: "POST",
+    url: url,
+    data: JSON.stringify({ text }),
+    dataType: "json",
+    complete: function() {
+    $(".reportSubmitted").show().delay(5000).fadeOut();
+    $(".textInput, .textArea").val("");
+    }
+  });
+  };
+  $("#submitReport").submit(event => {
+    event.preventDefault();
+    const formSelector = "#submitReport";
+    const form = getForm(formSelector);
+    const text = `Field Report - *Name: ${form.name}* | Email: ${form.email} | Report: ${form.report}`;
+    postMessage(formSelector, text, "https://hooks.slack.com/services/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");
+  });
+
 });

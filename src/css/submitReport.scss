@@ -1,0 +1,31 @@
+.submitReport {
+    font-size: 2.2rem;
+    > * + * {
+        margin-top: $defaultSpacingHalf;
+    }
+    .textInput {
+        font-size: 2.2rem;
+        display: block;
+        width: 100%;
+    }
+    .textArea {
+        display: block;
+        width: 100%;
+        border: solid 1px $darkerGreen;
+        font-size: 2.2rem;
+        background: transparent;
+        color: $codeGreen;
+        padding: $defaultSpacing;
+        transition: $defaultTransition;
+        &:focus {
+            border-color: $codeGreen;
+            outline: 0;
+        }
+    }
+    .button {
+        font-size: 2.2rem;
+    }
+    .reportSubmitted {
+        display: none;
+    }
+}

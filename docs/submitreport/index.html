@@ -16,30 +16,35 @@
 		<meta name="theme-color" content="#ffffff">
 		<!--[htmlclean-protect]-->
 		<!-- inject:css -->
-		<link rel="stylesheet" href="../../css/styles.css">
+		<link rel="stylesheet" href="../css/styles.css">
 		<!-- endinject -->
 		<!--[/htmlclean-protect]-->
 		<!-- CSS -->
 	</head>
 
-	<body class="medicalTerminal">
+	<body class="mainTerminal">
 
 		<div class="container">
 			<div class="background">
 				<div class="background__contentBox">
-					<div class="messages">
-						<header class="header">
-							<a href="../menu/">< Back</a>
-							<h1>Medical logs</h1>
-						</header>
-					</div>
+					<header class="header">
+						<h1>Field report</h1>
+					</header>
+					<form action="post" id="submitReport" class="submitReport">
+						<input type="text" id="name" name="name" class="textInput" autocomplete="off" placeholder="Enter your full name" required>
+						<input type="email" id="email" name="email" class="textInput" autocomplete="off" placeholder="Enter your email address" required>
+						<textarea id="report" name="report" class="textArea" cols="30" rows="10" placeholder="Enter your field report" required></textarea>
+						<input type="submit" class="button" value="Submit Report">
+						<p class="reportSubmitted">Your report has been submitted.</p>
+					</form>
 				</div>
 			</div>
 		</div>
 
+		<script src="../js/jquery.min.js"></script>
 		<!--[htmlclean-protect]-->
 		<!-- inject:js -->
-		<script src="../../js/scripts.js"></script>
+		<script src="../js/scripts.js"></script>
 		<!-- endinject -->
 		<!--[/htmlclean-protect]-->
 		<!-- JavaScript -->
