@@ -212,7 +212,7 @@ jQuery(document).ready(function($) {
   $("#medicalNavPasscode").submit(function(e) {
     e.preventDefault();
     if ($(".passcode").val() == "drugs") {
-      window.location.href = window.location.origin + '/medicalterminal/menu';
+      window.location.href = '../menu';
     } else if ($(".passcode").val() != "drugs") {
       $(".passcode").val("");
       $(".invalidEntry").show();
@@ -222,7 +222,7 @@ jQuery(document).ready(function($) {
   $("#labNavPasscode").submit(function(e) {
     e.preventDefault();
     if ($(".passcode").val() == "goat") {
-      window.location.href = window.location.origin + '/labterminal/menu';
+      window.location.href = '../menu';
     } else if ($(".passcode").val() != "goat") {
       $(".passcode").val("");
       $(".invalidEntry").show();
@@ -270,14 +270,17 @@ jQuery(document).ready(function($) {
   function timerIncrement() {
       idleTime = idleTime + 1;
       if (idleTime > 3) { // 30 seconds
-          if ($("body").hasClass("medicalTerminal")) {
-            window.location.href = window.location.origin + '/medicalterminal/';
+          if ($("body").hasClass("submitReport")) {
+            return false;
+          }
+          else if ($("body").hasClass("medicalTerminal")) {
+            window.location.href = '../';
           }
           else if ($("body").hasClass("labTerminal")) {
-            window.location.href = window.location.origin + '/labterminal/';
+            window.location.href = '../';
           }
           else {
-            window.location.href = window.location.origin + '/mainterminal/';
+            window.location.href = '../';
           }
       }
   }
