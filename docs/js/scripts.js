@@ -212,8 +212,7 @@ jQuery(document).ready(function($) {
   $("#medicalNavPasscode").submit(function(e) {
     e.preventDefault();
     if ($(".passcode").val() == "drugs") {
-      $(this).hide();
-      $(".navigation--medical").show();
+      window.location.href = window.location.origin + '/medicalterminal/menu';
     } else if ($(".passcode").val() != "drugs") {
       $(".passcode").val("");
       $(".invalidEntry").show();
@@ -223,8 +222,7 @@ jQuery(document).ready(function($) {
   $("#labNavPasscode").submit(function(e) {
     e.preventDefault();
     if ($(".passcode").val() == "goat") {
-      $(this).hide();
-      $(".navigation--lab").show();
+      window.location.href = window.location.origin + '/labterminal/menu';
     } else if ($(".passcode").val() != "goat") {
       $(".passcode").val("");
       $(".invalidEntry").show();
@@ -254,5 +252,34 @@ jQuery(document).ready(function($) {
     const text = `Field Report - *Name: ${form.name}* | Email: ${form.email} | Report: ${form.report}`;
     postMessage(formSelector, text, "https://hooks.slack.com/services/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");
   });
+
+  // On period of inactivity, reset to home screen
+
+  var idleTime = 0;
+  //Increment the idle time counter every 10 seconds.
+  var idleInterval = setInterval(timerIncrement, 10000); // 10 seconds
+
+  //Zero the idle timer on mouse movement.
+  $(this).mousemove(function (e) {
+      idleTime = 0;
+  });
+  $(this).keypress(function (e) {
+      idleTime = 0;
+  });
+
+  function timerIncrement() {
+      idleTime = idleTime + 1;
+      if (idleTime > 3) { // 30 seconds
+          if ($("body").hasClass("medicalTerminal")) {
+            window.location.href = window.location.origin + '/medicalterminal/';
+          }
+          else if ($("body").hasClass("labTerminal")) {
+            window.location.href = window.location.origin + '/labterminal/';
+          }
+          else {
+            window.location.href = window.location.origin + '/mainterminal/';
+          }
+      }
+  }
 
 });

@@ -16,42 +16,26 @@
 		<meta name="theme-color" content="#ffffff">
 		<!--[htmlclean-protect]-->
 		<!-- inject:css -->
-		<link rel="stylesheet" href="../../css/styles.css">
 		<!-- endinject -->
 		<!--[/htmlclean-protect]-->
 		<!-- CSS -->
 	</head>
 
-	<body class="mainTerminal">
+	<body class="labTerminal">
 
 		<div class="container">
 			<div class="background">
 				<div class="background__contentBox">
-					<div class="crew">
-						<header class="header">
-							<a href="../crew/">< Back to crew listing</a>
-							<h1>Crew Member ID: 002</h1>
-						</header>
-						<div class="listing">
-							<div class="listing__item">
-								<img src="../../img/randyCooper.jpg" class="listing__picture">
-								<div class="listing__details">
-									<h3>Randy Cooper</h3>
-									<h4>ENGINEER</h4>
-									<p>Age: 34</p>
-									<p>
-										<strong>Bio:</strong>
-									</p>
-									<p class="contentRequired">Additional content required</p>
-									<p>
-										Always been good with his hands. Has been known to have an unorthodox way of doing things, but always seems to get the job done.
-									</p>
-										The captain has had his back through an Inquisition.
-									</p>
-								</div>
-							</div>
+
+					<form id="labNavPasscode" class="passcodeEntry">
+						<input type="password" name="passcode" class="textInput passcode" autocomplete="off" placeholder="Enter passcode">
+						<input type="submit" class="button" value="UNLOCK">
+						<div class="invalidEntry flexspan">
+							Invalid entry. Try again.
 						</div>
-					</div>
+						<div class="softkeys softkeys--sm flexspan" data-target="input[name='passcode']"></div>
+					</form>
+
 				</div>
 			</div>
 		</div>
@@ -59,7 +43,6 @@
 		<script src="../../js/jquery.min.js"></script>
 		<!--[htmlclean-protect]-->
 		<!-- inject:js -->
-		<script src="../../js/scripts.js"></script>
 		<!-- endinject -->
 		<!--[/htmlclean-protect]-->
 		<!-- JavaScript -->
