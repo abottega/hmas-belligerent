@@ -189,10 +189,10 @@ jQuery(document).ready(function($) {
 
   $("#missionControlPasscode").submit(function(e) {
     e.preventDefault();
-    if ($(".passcode").val() == "hmas") {
+    if ($(".passcode").val() == "atlas") {
       $(this).hide();
       $(".missionControl, .lockedHeading").show();
-    } else if ($(".passcode").val() != "hmas") {
+    } else if ($(".passcode").val() != "atlas") {
       $(".passcode").val("");
       $(".invalidEntry").show();
     }
@@ -200,10 +200,21 @@ jQuery(document).ready(function($) {
 
   $("#captainsLogPasscode").submit(function(e) {
     e.preventDefault();
-    if ($(".passcode").val() == "capn") {
+    if ($(".passcode").val() == "therock") {
       $(this).hide();
       $(".captainsLog, .lockedHeading").show();
-    } else if ($(".passcode").val() != "hmas") {
+    } else if ($(".passcode").val() != "therock") {
+      $(".passcode").val("");
+      $(".invalidEntry").show();
+    }
+  });
+  
+  $("#recordingsPasscode").submit(function(e) {
+    e.preventDefault();
+    if ($(".passcode").val() == "2913") {
+      $(this).hide();
+      $(".recordings, .lockedHeading").show();
+    } else if ($(".passcode").val() != "2913") {
       $(".passcode").val("");
       $(".invalidEntry").show();
     }
@@ -211,9 +222,9 @@ jQuery(document).ready(function($) {
 
   $("#medicalNavPasscode").submit(function(e) {
     e.preventDefault();
-    if ($(".passcode").val() == "drugs") {
+    if ($(".passcode").val() == "tk421") {
       window.location.href = '../menu';
-    } else if ($(".passcode").val() != "drugs") {
+    } else if ($(".passcode").val() != "tk421") {
       $(".passcode").val("");
       $(".invalidEntry").show();
     }
@@ -221,9 +232,9 @@ jQuery(document).ready(function($) {
   
   $("#labNavPasscode").submit(function(e) {
     e.preventDefault();
-    if ($(".passcode").val() == "goat") {
+    if ($(".passcode").val() == "sciencebitch") {
       window.location.href = '../menu';
-    } else if ($(".passcode").val() != "goat") {
+    } else if ($(".passcode").val() != "sciencebitch") {
       $(".passcode").val("");
       $(".invalidEntry").show();
     }
@@ -269,7 +280,7 @@ jQuery(document).ready(function($) {
 
   function timerIncrement() {
       idleTime = idleTime + 1;
-      if (idleTime > 3) { // 30 seconds
+      if (idleTime > 5) { // 50 seconds
           if ($("body").hasClass("submitReport")) {
             return false;
           }

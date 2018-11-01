@@ -17,12 +17,14 @@ var paths = {
   srcCSS: 'src/css/styles.scss',
   srcJS: 'src/js/**/*.js',
   srcIMG: 'src/img/**/*',
+  srcAUDIO: 'src/audio/**/*',
 
   tmp: 'tmp',
   tmpIndex: 'tmp/**/*.html',
   tmpCSS: 'tmp/css/',
   tmpJS: 'tmp/js/',
   tmpIMG: 'tmp/img/',
+  tmpAUDIO: 'tmp/audio/',
 
   docs: 'docs', /* for github pages */
 
@@ -31,10 +33,15 @@ var paths = {
   distCSS: 'dist/css/',
   distJS: 'dist/js/',
   distIMG: 'dist/img/'
+
 };
 
 gulp.task('html', function () {
   return gulp.src(paths.srcHTML).pipe(gulp.dest(paths.tmp));
+});
+
+gulp.task('audio', function () {
+  return gulp.src(paths.srcAUDIO).pipe(gulp.dest(paths.tmpAUDIO));
 });
 
 gulp.task('css', function () {
@@ -51,7 +58,7 @@ gulp.task('img', function () {
   return gulp.src(paths.srcIMG).pipe(gulp.dest(paths.tmpIMG));
 });
 
-gulp.task('copy', ['html', 'css', 'js', 'img']);
+gulp.task('copy', ['html', 'css', 'js', 'img', 'audio']);
 
 gulp.task('inject', ['copy'], function () {
   var css = gulp.src(paths.tmpCSS + "styles.css");
