@@ -751,7 +751,23 @@ template {
   border: solid 1px #909a92;
   margin-top: 10px;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  max-width: 600px; }
+
+.route {
+  display: flex;
+  align-items: center; }
+  .route:before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin-right: 5px; }
+  .route--planned:before {
+    background-color: #008c66; }
+  .route--current:before {
+    background-color: #8f2100; }
 
 .recordings {
   display: none; }
