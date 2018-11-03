@@ -769,7 +769,8 @@ template {
   .route--current:before {
     background-color: #8f2100; }
 
-.recordings {
+.recordings,
+.captainsLog {
   display: none; }
 
 .submitReport {
