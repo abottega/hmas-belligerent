@@ -244,7 +244,7 @@ jQuery(document).ready(function($) {
   var counter = 1;
 
   $('.enhance__button').on('click', function() {
-    $('.enhance__image').attr('src','../../img/zoom' + counter + '.jpg');
+    $('.enhance__image').attr('src','../../img/Zoom' + counter + '.jpg');
     if (counter < 9){
       counter++;
     }
