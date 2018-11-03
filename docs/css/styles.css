@@ -797,3 +797,29 @@ template {
     font-size: 2.2rem; }
   .submitReport .reportSubmitted {
     display: none; }
+
+.enhance {
+  position: relative; }
+  .enhance__button {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    appearance: none;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 4px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border: solid 1px black;
+    transition: all 200ms ease-in-out; }
+    .enhance__button:hover {
+      background: rgba(0, 0, 0, 0.6); }
+    .enhance__button:focus {
+      outline: 0; }
+  .enhance__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    margin: 0;
+    border: 0; }

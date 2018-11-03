@@ -240,6 +240,16 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // Enhance
+  var counter = 1;
+
+  $('.enhance__button').on('click', function() {
+    $('.enhance__image').attr('src','../../img/zoom' + counter + '.jpg');
+    if (counter < 9){
+      counter++;
+    }
+  });
+
   // Post form to slack channel
 	const getForm = selector =>
   $(selector).serializeArray().reduce( (accum, entry) => {accum[entry.name] = entry.value; return accum}, {});
