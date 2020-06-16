@@ -245,7 +245,7 @@ jQuery(document).ready(function($) {
 
   $('.enhance__button').on('click', function() {
     $('.enhance__image').attr('src','../../img/Zoom' + counter + '.jpg');
-    if (counter < 9){
+    if (counter < 7){
       counter++;
     }
   });
